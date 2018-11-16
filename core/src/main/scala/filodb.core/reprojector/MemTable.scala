@@ -33,7 +33,7 @@ trait MemTable extends StrictLogging {
    */
 
   /**
-   * Ingests a bunch of new rows.  When this method returns, the rows will have been comitted to disk
+   * Ingests a bunch of new rows.  When this method returns, the rows will have been committed to disk
    * such that a crash could be recoverable.
    * @param rows the rows to ingest.  For now, they must have the exact same columns, in the exact same order,
    *        as in the projection.  Also, the caller should do buffering; ingesting a very small number of rows

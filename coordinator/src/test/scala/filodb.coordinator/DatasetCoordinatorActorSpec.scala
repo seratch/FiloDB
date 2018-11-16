@@ -119,7 +119,7 @@ with ScalaFutures {
   it("should send back Nack if over maximum number of rows or Nack sent before with no CheckCanIngest") {
     // First one will go through, but make memTable full.  Flush will happen, new memtable available
     dsActor ! NewRows(probe.ref, namesWithPartCol.take(205).map(TupleRowReader), 0L)
-    // Second one will go through but make memtable full again.  Third one will be denied becuase
+    // Second one will go through but make memtable full again.  Third one will be denied because
     // hopefully flushing still happening and active memtable is full again
     dsActor ! NewRows(probe.ref, namesWithPartCol.take(205).map(TupleRowReader), 1L)
     dsActor ! NewRows(probe.ref, namesWithPartCol.drop(205).take(20).map(TupleRowReader), 2L)

@@ -32,7 +32,7 @@ class WriteAheadLogReader(config: Config,
         for {index <- 0 to columnCount - 1} {
           val bytesForChunk = getLittleEndianBytesAsInt(4)
           chunkArray(index) = ByteBuffer.wrap(getBytes(bytesForChunk))
-          // read chunk seperator
+          // read chunk separator
           if (index < columnCount - 1) {
             validField(1, ChunkHeader.chunkSeperator, true)
           }

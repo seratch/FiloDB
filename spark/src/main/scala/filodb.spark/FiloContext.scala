@@ -43,7 +43,7 @@ class FiloContext(val sqlContext: SQLContext) extends AnyVal {
    *   Overwrite - creates the dataset, deleting the old definition first if needed
    *   ErrorIfExists - throws an error if the dataset already exists
    *
-   * For the other paramter definitions, please see saveAsFiloDataset().
+   * For the other parameter definitions, please see saveAsFiloDataset().
    */
   private[spark] def createOrUpdateDataset(schema: StructType,
                                            dataset: DatasetRef,
